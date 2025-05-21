@@ -1,0 +1,14 @@
+workflows:
+  windows_build:
+    name: Build Windows App
+    environment:
+      flutter: stable
+      os: windows
+    scripts:
+      - name: Get dependencies
+        script: flutter pub get
+      - name: Build Windows exe
+        script: flutter build windows
+    artifacts:
+      - build/windows/runner/Release/*.exe
+      
